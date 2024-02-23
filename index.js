@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 
 const app  = express();
 const port = 3000;
+const blogList = [];
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -11,9 +12,9 @@ app.get("/", (req, res) => {
 })
 
 app.post("/submit", (req, res) => {
-    var blogText = {inputText : req.body.blog}; 
-    console.log(blogText.inputText);
-    res.render("index.ejs", blogText);
+    var blog = {blogType: req.body.blogType, inputText : req.body.blog}; 
+    blogList.push(blog);
+    res.render("index.ejs", {blogList : blogList});
 })
 
 app.listen(port, () => {
