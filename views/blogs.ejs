@@ -1,3 +1,4 @@
+<%- include("partials/header.ejs") %>
 <a href="/"> Home</a>
 <h2>Blogs: </h2>
 <% if (locals.blogList) { %>
@@ -14,8 +15,15 @@
 
 <% if (locals.blogListEdit) { %>
     <form action="/resubmit" method="POST">
-        <input type="text" id="blogType" name="blogType" value=<%= blogListEdit.blogType %>><br>
-        <textarea type="text" id="blog" name="blog" ><%= blogListEdit.inputText %></textarea><br>
+        <select required list="blogType" id="blogType" name="blogType">
+            <option value="No category">Select blog category</option>
+            <option value="Life">Life</option>
+            <option value="Travel">Travel</option>
+            <option value="Work">Work</option>
+            <option value="Food">Food</option>
+            <option value="Others">Others</option>
+            </select><br>
+        <textarea type="text" id="blog" name="blog" required><%= blogListEdit.inputText %></textarea><br>
         <input type="hidden" name="blogID" value=<%= blogListEdit.id %> >
         <input type="submit" value="ReSubmit">
     </form>
