@@ -1,0 +1,22 @@
+<a href="/"> Home</a>
+<h2>Blogs: </h2>
+<% if (locals.blogList) { %>
+    <% blogList.forEach(element => { %>
+        <div class="blog-title"><h3><%= element.blogType %></h3></div>
+        <div class="blog-para"><p><%= element.inputText %></p></div>
+        <form action="/delete" method="POST">
+            <input type="hidden" name="blogID" value=<%= element.id %> >
+            <input type="submit" value="Delete">
+            <button type="submit" name="blogId" value=<%= element.id %> formaction="/edit">Edit</button>
+        </form>
+    <%});%>
+<% } %>
+
+<% if (locals.blogListEdit) { %>
+    <form action="/resubmit" method="POST">
+        <input type="text" id="blogType" name="blogType" value=<%= blogListEdit.blogType %>><br>
+        <textarea type="text" id="blog" name="blog" ><%= blogListEdit.inputText %></textarea><br>
+        <input type="hidden" name="blogID" value=<%= blogListEdit.id %> >
+        <input type="submit" value="ReSubmit">
+    </form>
+<% } %>

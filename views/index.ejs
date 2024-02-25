@@ -15,28 +15,6 @@
         <textarea type="text" id="blog" name="blog" placeholder="Blog"></textarea><br>
         <input type="submit" value="Submit">
       </form>
-    <h2>Blogs: </h2>
-    <% if (locals.blogList) { %>
-        <% blogList.forEach(element => { %>
-            <div class="blog-title"><h3><%= element.blogType %></h3></div>
-            <div class="blog-para"><p><%= element.inputText %></p></div>
-            <form action="/delete" method="POST">
-                <input type="hidden" name="blogID" value=<%= element.id %> >
-                <input type="submit" value="Delete">
-            </form>
-            <form action="/edit" method="POST">
-                <input type="hidden" name="blogID" value=<%= element.id %> >
-                <input type="submit" value="Edit">
-            </form>
-        <%});%>
-    <% } %>
-    <% if (locals.blogListEdit) { %>
-        <form action="/resubmit" method="POST">
-            <input type="text" id="blogType" name="blogType" value=<%= blogListEdit.blogType %>><br>
-            <textarea type="text" id="blog" name="blog" ><%= blogListEdit.inputText %></textarea><br>
-            <input type="hidden" name="blogID" value=<%= blogListEdit.id %> >
-            <input type="submit" value="ReSubmit">
-        </form>
-    <% } %>
+      <a href="/blogs"> AllBlogs</a>
 </body>
 </html>
