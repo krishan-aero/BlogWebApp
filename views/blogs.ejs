@@ -2,15 +2,27 @@
 <a href="/"> Home</a>
 <h2>Blogs: </h2>
 <% if (locals.blogList) { %>
-    <% blogList.forEach(element => { %>
-        <div class="blog-title"><h3><%= element.blogType %></h3></div>
-        <div class="blog-para"><p><%= element.inputText %></p></div>
-        <form action="/delete" method="POST">
-            <input type="hidden" name="blogID" value=<%= element.id %> >
-            <input type="submit" value="Delete">
-            <button type="submit" name="blogId" value=<%= element.id %> formaction="/edit">Edit</button>
-        </form>
-    <%});%>
+    <div class="container">
+            <% blogList.forEach(element => { %>
+            <div class="card">
+                <div class="card__header">
+                    <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
+                  </div>
+                <div class="card__body">
+                    <span class="tag tag-red"><%= element.blogType %></span>
+                    <p><%= element.inputText %></p>
+                </div>
+                <div class="card__footer">
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="blogID" value=<%= element.id %> >
+                        <input type="submit" value="Delete">
+                        <button type="submit" name="blogId" value=<%= element.id %> formaction="/edit">Edit</button>
+                    </form>
+                </div>
+            </div>
+            <%});%>
+        </div>
+    </div>
 <% } %>
 
 <% if (locals.blogListEdit) { %>
