@@ -1,6 +1,5 @@
 <%- include("partials/header.ejs") %>
-<a href="/"> Home</a>
-<h2>Blogs: </h2>
+<h1 id="header" class="text-primary">My Blog</h1>
 <% if (locals.blogList) { %>
     <div class="container">
             <% blogList.forEach(element => { %>
@@ -9,7 +8,7 @@
                     <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
                   </div>
                 <div class="card__body">
-                    <span class="tag tag-red"><%= element.blogType %></span>
+                    <span class="tag tag-green"><%= element.blogType %></span>
                     <p><%= element.inputText %></p>
                 </div>
                 <div class="card__footer">
