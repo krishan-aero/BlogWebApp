@@ -1,8 +1,194 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+  overflow: hidden;
+  width: 100%;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  padding-bottom: 20px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  border-radius: 8px;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #428bca;
+  color: white;
+  border-radius: 8px;
+}
+
+.formContainer{
+  width: 100%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
 #blogType{
-    width: 200px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
 }
 
 #blog{
-    width: 200px;
-    height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 10px;
 }
+
+#submitBtn{
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 0;
+  border-radius: 5px;
+}
+
+
+body {
+    font-family: "Quicksand", sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #7f7fd5;
+    background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+    margin-top: 30px;
+  }
+
+  .blogEditContainer{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1#header{
+    text-align: center;
+    padding:50px;
+    font-size: 62px;
+    font-family: "Pacifico";
+    color: #428bca;
+  }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: none;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin-block: 2rem;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .card {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+  }
+
+  .card__body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+
+.tag {
+    align-self: flex-start;
+    padding: .25em .75em;
+    border-radius: 1em;
+    font-size: .75rem;
+  }
+  
+  .tag + .tag {
+    margin-left: .5em;
+  }
+
+  .tag-green {
+    background: #37c24e;
+    background: linear-gradient(to bottom, #40e384, #3dee2d);
+    color: #fafafa;
+  }
+
+  .tag-blue {
+    background: #56CCF2;
+    background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+    color: #fafafa;
+  }
+  
+  .tag-brown {
+    background: #D1913C;
+  background: linear-gradient(to bottom, #FFD194, #D1913C);
+    color: #fafafa;
+  }
+  
+  .tag-red {
+    background: #cb2d3e;
+  background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+    color: #fafafa;
+  }
+  
+  .card__body h4 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+  }
+
+  .card__footer {
+    display: flex;
+    padding: 1rem;
+    margin-top: auto;
+  }

@@ -1,20 +1,23 @@
 <%- include("partials/header.ejs") %>
 <body>
-    <a href="/refresh"> Refresh</a>
-    <form action="/submit" method="POST">
-        <label for="blogType">Blog classification:</label><br>
-        <select list="blogTypeList" name="blogType" id="blogType" required>
-            <option value="No category">Select blog category</option>
-            <option value="Life">Life</option>
-            <option value="Travel">Travel</option>
-            <option value="Work">Work</option>
-            <option value="Food">Food</option>
-            <option value="Others">Others</option>
-        </select><br>
-        <label for="blog">Write your mind:</label><br>
-        <textarea type="text" id="blog" name="blog" placeholder="Blog" required></textarea><br>
-        <input type="submit" value="Submit">
-      </form>
-      <a href="/blogs"> AllBlogs</a>
+    <!-- <a href="/refresh"> Refresh</a> -->
+    <div class="formContainer">
+        <div class="form">
+            <form action="/submit" method="POST">
+                <!-- <label for="blogType" class="blogTitle">Blog classification:</label><br> -->
+                <select list="blogTypeList" name="blogType" id="blogType" required>
+                    <option value="No category">Title</option>
+                    <option value="Life">Life</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Work">Work</option>
+                    <option value="Food">Food</option>
+                    <option value="Others">Others</option>
+                </select><br>
+                <!-- <label for="blog" class="blogBody">Write your mind:</label><br> -->
+                <textarea type="text" id="blog"  name="blog" placeholder="Blog" cols="60" rows="8" required></textarea><br>
+                <input id="submitBtn" class="btn" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 </body>
 </html>

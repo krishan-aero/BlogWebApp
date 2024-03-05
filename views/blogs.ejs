@@ -1,30 +1,45 @@
 <%- include("partials/header.ejs") %>
-<a href="/"> Home</a>
-<h2>Blogs: </h2>
+<h1 id="header" class="text-primary">My Blog</h1>
 <% if (locals.blogList) { %>
-    <% blogList.forEach(element => { %>
-        <div class="blog-title"><h3><%= element.blogType %></h3></div>
-        <div class="blog-para"><p><%= element.inputText %></p></div>
-        <form action="/delete" method="POST">
-            <input type="hidden" name="blogID" value=<%= element.id %> >
-            <input type="submit" value="Delete">
-            <button type="submit" name="blogId" value=<%= element.id %> formaction="/edit">Edit</button>
-        </form>
-    <%});%>
+    <div class="container">
+            <% blogList.forEach(element => { %>
+            <div class="card">
+                <div class="card__header">
+                    <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
+                  </div>
+                <div class="card__body">
+                    <span class="tag tag-green"><%= element.blogType %></span>
+                    <p><%= element.inputText %></p>
+                </div>
+                <div class="card__footer">
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="blogID" value=<%= element.id %> >
+                        <input type="submit" value="Delete">
+                        <button type="submit" name="blogId" value=<%= element.id %> formaction="/edit">Edit</button>
+                    </form>
+                </div>
+            </div>
+            <%});%>
+        </div>
+    </div>
 <% } %>
 
 <% if (locals.blogListEdit) { %>
-    <form action="/resubmit" method="POST">
-        <select required list="blogType" id="blogType" name="blogType">
-            <option value="No category">Select blog category</option>
-            <option value="Life">Life</option>
-            <option value="Travel">Travel</option>
-            <option value="Work">Work</option>
-            <option value="Food">Food</option>
-            <option value="Others">Others</option>
-            </select><br>
-        <textarea type="text" id="blog" name="blog" required><%= blogListEdit.inputText %></textarea><br>
-        <input type="hidden" name="blogID" value=<%= blogListEdit.id %> >
-        <input type="submit" value="ReSubmit">
-    </form>
+    <div class="formContainer blogEditContainer">
+        <div class="form">
+            <form action="/resubmit" method="POST">
+                <select required list="blogType" id="blogType" name="blogType">
+                    <option value="No category">Select blog category</option>
+                    <option value="Life">Life</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Work">Work</option>
+                    <option value="Food">Food</option>
+                    <option value="Others">Others</option>
+                    </select><br>
+                <textarea type="text" id="blog" name="blog" required><%= blogListEdit.inputText %></textarea><br>
+                <input type="hidden" name="blogID" value=<%= blogListEdit.id %> >
+                <input id="submitBtn" class="btn"  type="submit" value="ReSubmit">
+            </form>
+        </div>
+    </div>
 <% } %>
