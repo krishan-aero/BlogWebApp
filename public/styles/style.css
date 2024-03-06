@@ -15,6 +15,7 @@
   width: 100%;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
+  left: 0;
   width: 100%; /* Full width */
   padding-bottom: 20px;
 }
@@ -63,13 +64,36 @@
   padding: 10px;
 }
 
+/* .blogInputText{
+  height: 50px;
+} */
+
+#submitBtn, #deleteBtn, #editBtn{
+  height: 30px;
+  margin-top: 10px;
+}
+
 #submitBtn{
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
   width: 100%;
-  height: 30px;
-  margin-top: 10px;
+}
+
+#deleteBtn{
+  float: left;
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  width: 100px;
+}
+
+#editBtn{
+  float: right;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  width: 100px;
 }
 
 .btn {
@@ -85,6 +109,11 @@
   border-radius: 5px;
 }
 
+.editableBtn{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 
 body {
     font-family: "Quicksand", sans-serif;
@@ -114,7 +143,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     overflow: none;
-    justify-content: flex-start;
+    justify-content: center;
     max-width: 1200px;
     margin-block: 2rem;
     gap: 2rem;
@@ -137,6 +166,7 @@ body {
     border-radius: 1em;
     background: #ECE9E6;
     background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    height: 450px;
   }
 
   .card__body {
@@ -144,6 +174,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    max-height: 150px;
+    overflow: hidden;
   }
 
 
@@ -190,5 +222,11 @@ body {
   .card__footer {
     display: flex;
     padding: 1rem;
-    margin-top: auto;
+    margin-top: 5px;
+  }
+
+  @media only screen and (max-width: 350px){
+    body {
+      width: 350px;
+    }
   }
