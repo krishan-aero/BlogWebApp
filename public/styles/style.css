@@ -36,7 +36,7 @@
   border-radius: 8px;
 }
 
-/* Add a color to the active/current link */
+/* Add a color to the current link */
 .topnav a.active {
   background-color: #428bca;
   color: white;
