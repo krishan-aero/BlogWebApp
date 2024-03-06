@@ -9,13 +9,15 @@
                   </div>
                 <div class="card__body">
                     <span class="tag tag-green"><%= element.blogType %></span>
-                    <p><%= element.inputText %></p>
+                    <p class="blogInputText"><%= element.inputText %></p>
                 </div>
                 <div class="card__footer">
                     <form action="/delete" method="POST">
                         <input type="hidden" name="blogID" value=<%= element.id %> >
-                        <input type="submit" value="Delete">
-                        <button type="submit" name="blogId" value=<%= element.id %> formaction="/edit">Edit</button>
+                        <div class="editableBtn">
+                            <input id="deleteBtn" class="btn" type="submit" value="Delete">
+                            <button id="editBtn" class="btn" type="submit" name="blogId" value=<%= element.id %> formaction="/edit">Edit</button>
+                        </div>
                     </form>
                 </div>
             </div>
